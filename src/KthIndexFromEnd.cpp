@@ -10,7 +10,11 @@ ERROR CASES: Return '\0' for invalid inputs.
 
 NOTES:
 */
+#include <stdio.h>
+#include <string.h>
 
 char KthIndexFromEnd(char *str, int K) {
-	return '\0';
+	if ((str == NULL) || (K < 0) || (K > strlen(str) - 1) || (*str == '\0'))
+		return '\0';
+	else return str[strlen(str) - K - 1];
 }
